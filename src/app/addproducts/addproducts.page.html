@@ -1,0 +1,25 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button default-href="#"></ion-back-button>
+    </ion-buttons>
+    <ion-title>
+      เพิ่มสินค้า
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-no-padding">
+  <ion-card class="card">
+    <ion-item>
+      <ion-input type="text" [(ngModel)]="txtname" placeholder="ชื่อสินค้า :"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input type="text" [(ngModel)]="txtprice" placeholder="ราคา :"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input type="file" (change)="onfilechange($event)" accept="image/*" ></ion-input>
+    </ion-item>
+    <ion-button expand="block" (click)="addproduct()" color="primary" class="buttonsave">บันทึก</ion-button>
+</ion-card>
+</ion-content>
