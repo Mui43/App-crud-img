@@ -1,7 +1,7 @@
 <?php
 
 header('Access-Control-Allow-Origin: *');
-header('Access-Control-Allow-Methods:GET, POST, OPTIONS, PATCH, PUT, DELECT');
+header('Access-Control-Allow-Methods:GET, POST, OPTIONS, PATCH, PUT, DELECT, DELETE');
 header('Access-Control-Allow-Headers:token, Content-Type');
 header('Access-Control-Max-Age:1728000');
 header('Content-Length:0');

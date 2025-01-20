@@ -1,8 +1,10 @@
+import { routes } from './../app.routes';
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { DataapiService } from '../dataapi.service';
 import { IonContent, IonHeader, IonTitle, IonToolbar, IonBackButton, IonButtons, IonInput, IonCard, IonItem, IonButton } from '@ionic/angular/standalone';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-addproducts',
@@ -19,6 +21,7 @@ export class AddproductsPage implements OnInit {
 
   constructor(
     public dataapi: DataapiService,
+    private router: Router
   ) { }
 
   onfilechange(event: any) {
@@ -44,5 +47,6 @@ export class AddproductsPage implements OnInit {
       this.txtprice = ""
       this.selectFile = null;
     });
+    this.router.navigate(['/showproduct']);
   }
 }

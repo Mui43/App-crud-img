@@ -7,11 +7,19 @@ export const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: 'addproducts',
+    redirectTo: 'showproduct',
     pathMatch: 'full',
   },
   {
     path: 'addproducts',
     loadComponent: () => import('./addproducts/addproducts.page').then( m => m.AddproductsPage)
+  },
+  {
+    path: 'showproduct',
+    loadComponent: () => import('./showproduct/showproduct.page').then( m => m.ShowproductPage)
+  },
+  {
+    path: 'editproducts',
+    loadComponent: () => import('./editproducts/editproducts.page').then( m => m.EditproductsPage)
   },
 ];

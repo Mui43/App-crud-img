@@ -1,0 +1,33 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="light">
+    <ion-button slot="end" (click)="GotoAdd()">
+      เพิ่มสินค้า
+    </ion-button>
+    <ion-title>สินค้า</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" color="dark">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>สินค้า</ion-card-title>
+      <ion-card-subtitle>สินค้าภาในร้าน</ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list *ngFor="let pro of products">
+        <ion-item>
+          <ion-thumbnail slot="start">
+            <img alt="No image" [src]="'http://127.0.0.1/2-3/CRUD-API/' + pro.image" />
+          </ion-thumbnail>
+          <ion-label>
+            <h4>{{ pro.name}}</h4>
+            <p>ราคา {{ pro.price }} </p>
+          </ion-label>
+          <ion-button color="primary" (click)="editProduct(pro)">แก้ไข</ion-button>
+          <ion-button color="danger" (click)="deletepro(pro.id)">ลบ</ion-button>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>
